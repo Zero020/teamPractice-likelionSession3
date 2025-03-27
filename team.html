@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>매3개를 소개합니다</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="team.css" />
+  </head>
+  <body>
+    <div id="book">
+      <section id="pageSection">
+        <div class="page" id="page1">
+          <img src="main.png" alt="책 표지" class="main-page" />
+        </div>
+
+        <div class="page" id="page2">
+          <br/><br/>
+          <div class="sunhwa_profile">
+            <img class="profile_img" src="sunhwa.png" alt="김선화 프로필이미지"/>
+            <h3>김선화</h3>
+          </div>
+          <div class="yeoung_profile">
+            <img id="profile_img" src="young.png" alt="최영 프로필이미지"/>
+            <h3>최영</h3>
+          </div>
+          <div class="siwon_profile">
+            <img id="profile_img" src="siwon.png" alt="김시원 프로필이미지"/>
+            <h3>시원</h3>
+          </div>
+        </div>
+
+        <div class="page" id="page3"></div>
+      </section>
+    </div>
+    <script>
+      document.getElementById("page1").addEventListener("click", function () {
+          if (this.classList.contains("flipped")) {
+              this.style.transform = "rotateY(0deg)";   // 원래 위치로 되돌림
+              this.style.opacity = "1";  // 원래 투명도로 복원
+              this.classList.remove("flipped");
+          } else {
+              this.style.transform = "rotateY(-180deg)"; // 페이지 넘김
+              this.style.opacity = "0.4";  // 투명도 변경
+              this.classList.add("flipped");
+          }
+      });
+          </script>
+
+  </body>
+</html>
